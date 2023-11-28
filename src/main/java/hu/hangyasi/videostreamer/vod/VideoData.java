@@ -2,16 +2,26 @@ package hu.hangyasi.videostreamer.vod;
 
 public class VideoData {
 
+    private Integer id;
     private String name;
     private String summary;
     private String path;
     private byte[] image;
 
-    public VideoData(String name, String summary, String path, byte[] image) {
+    public VideoData(Integer id, String name, String summary, String path, byte[] image) {
+        this.id = id;
         this.name = name;
         this.summary = summary;
         this.path = path;
         this.image = image;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
