@@ -25,16 +25,11 @@ public class LoginController {
   @GetMapping
   public String auth(Authentication authentication) {
     Instant now = Instant.now();
-    long expiry = 36000L;
-    String scope = authentication.getAuthorities().stream()
-        .map(GrantedAuthority::getAuthority)
-        .collect(Collectors.joining(","));
     JwtClaimsSet claims = JwtClaimsSet.builder()
         .issuer("self")
         .issuedAt(now)
-        .expiresAt(now.plusSeconds(expiry))
+        .expiresAt(Instant.now().plusSeconds(86400L))
         .subject(authentication.getName())
-        .claim("scope", scope)
         .build();
     return this.encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
   }
