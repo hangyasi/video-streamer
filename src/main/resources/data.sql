@@ -1,3 +1,3 @@
-insert into video (id, name, location, summary) values (1, 'Waterfall', '/Users/zoltanhangyasi/zoli/video-streamer/src/main/resources/vod/dash/waterfall', 'This is a video of a waterfall');
-insert into video (id, name, location, summary) values (2, 'Ducks', '/Users/zoltanhangyasi/zoli/video-streamer/src/main/resources/vod/dash/nature_ducks', 'Ducks in a lake');
-insert into video (id, name, location, summary) values (3, 'Coffee', '/Users/zoltanhangyasi/zoli/video-streamer/src/main/resources/vod/dash/coffee', 'Video shows the coffee grinding process');
+insert into video (id, name, location, summary) values (1, 'Waterfall', 'E:\projects\streamer\video-streamer\src\main\resources\vod\dash\waterfall', 'This is a video of a waterfall');
+insert into video (id, name, location, summary) values (2, 'Ducks', 'E:\projects\streamer\video-streamer\src\main\resources\vod\dash\nature_ducks', 'Ducks in a lake');
+insert into video (id, name, location, summary) values (3, 'Coffee', 'E:\projects\streamer\video-streamer\src\main\resources\vod\dash\coffee', 'Video shows the coffee grinding process');

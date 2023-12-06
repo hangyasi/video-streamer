@@ -4,11 +4,14 @@ import hu.hangyasi.videostreamer.vod.FileManager;
 import hu.hangyasi.videostreamer.vod.VideoData;
 import hu.hangyasi.videostreamer.vod.dto.Video;
 import hu.hangyasi.videostreamer.vod.repository.VideoRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.nio.file.Paths;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +35,7 @@ public class VideoOnDemandController {
 
     @GetMapping(value = "/{id}/{filename}", produces = "video/mp4")
     public ResponseEntity<Resource> getFile(@PathVariable Integer id, @PathVariable String filename) {
+        System.out.println(Instant.now().toString() + "    " + filename + " szegmens kérése");
         Video metadata = repository.getReferenceById(id);
         return ResponseEntity.ok().body(fileManager.getFileFullPath(metadata.getLocation() + "/" + filename));
     }
